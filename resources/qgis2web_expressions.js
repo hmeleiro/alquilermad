@@ -752,7 +752,7 @@ function fnc_project_color(values, context) {
 
 
 
-function label_DISTRITOS2_eval_expression(context) {
+function label_DISTRITOS1_eval_expression(context) {
     // NOMBRE
 
     var feature = context.feature;

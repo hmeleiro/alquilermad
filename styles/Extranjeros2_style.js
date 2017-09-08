@@ -1,5 +1,5 @@
 var size = 0;
-var ranges_Extranjeros1 = [[0.030000, 0.080000, [ new ol.style.Style({
+var ranges_Extranjeros2 = [[0.030000, 0.080000, [ new ol.style.Style({
          fill: new ol.style.Fill({color: 'rgba(247,251,255,0.8)'})
     })]],
 [0.080000, 0.130000, [ new ol.style.Style({
@@ -14,8 +14,8 @@ var ranges_Extranjeros1 = [[0.030000, 0.080000, [ new ol.style.Style({
 [0.230000, 0.280000, [ new ol.style.Style({
          fill: new ol.style.Fill({color: 'rgba(8,48,107,0.8)'})
     })]]];
-var styleCache_Extranjeros1={}
-var style_Extranjeros1 = function(feature, resolution){
+var styleCache_Extranjeros2={}
+var style_Extranjeros2 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -32,15 +32,15 @@ var style_Extranjeros1 = function(feature, resolution){
     } else {
         labelText = ""
     }
-    var style = ranges_Extranjeros1[0][2];
-    for (i = 0; i < ranges_Extranjeros1.length; i++){
-        var range = ranges_Extranjeros1[i];
+    var style = ranges_Extranjeros2[0][2];
+    for (i = 0; i < ranges_Extranjeros2.length; i++){
+        var range = ranges_Extranjeros2[i];
         if (value > range[0] && value<=range[1]){
             style =  range[2];
         }
     };
     key = value + "_" + labelText
-    if (!styleCache_Extranjeros1[key]){
+    if (!styleCache_Extranjeros2[key]){
         var text = new ol.style.Text({
                 font: '13.0px \'Futura\', sans-serif',
                 text: labelText,
@@ -52,9 +52,9 @@ var style_Extranjeros1 = function(feature, resolution){
                   color: 'rgba(0, 0, 0, 1)'
                 })
             });
-        styleCache_Extranjeros1[key] = new ol.style.Style({"text": text})
+        styleCache_Extranjeros2[key] = new ol.style.Style({"text": text})
     }
-    var allStyles = [styleCache_Extranjeros1[key]];
+    var allStyles = [styleCache_Extranjeros2[key]];
     allStyles.push.apply(allStyles, style);
     return allStyles;
 };

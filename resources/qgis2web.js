@@ -25,7 +25,7 @@ var map = new ol.Map({
     overlays: [overlayPopup],
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1
+        extent: [-431313.326481, 4913832.736397, -377228.296252, 4946600.736397], maxZoom: 28, minZoom: 1
     })
 });
 
@@ -35,7 +35,7 @@ layerSwitcher.hidePanel = function() {};
 layerSwitcher.showPanel();
 
 
-map.getView().fit([-432917.268391, 4911125.827914, -391627.634245, 4959967.083523], map.getSize());
+map.getView().fit([-431313.326481, 4913832.736397, -377228.296252, 4946600.736397], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
@@ -75,7 +75,7 @@ var featureOverlay = new ol.layer.Vector({
     updateWhileInteracting: true // optional, for instant visual feedback
 });
 
-var doHighlight = true;
+var doHighlight = false;
 var doHover = true;
 
 var highlight;
