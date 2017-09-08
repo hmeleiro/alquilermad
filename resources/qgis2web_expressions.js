@@ -749,13 +749,3 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
-
-
-
-function label_DISTRITOS1_eval_expression(context) {
-    // NOMBRE
-
-    var feature = context.feature;
-    
-    return feature.get('NOMBRE') ;
-}
